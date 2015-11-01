@@ -1,21 +1,21 @@
 <?php
 require_once("../includes/initialize.php");
 if(!$session->is_logged_in()){redirect_to("login.php");}
-if($_SESSION['privilege']!="admin"){redirect_to("login.php");}
 include_layout_template('header.php');
 ?>
 
 			<table id="structure">
 				<tr>
 					<td id="navigation">
-						<a href="new_user.php">- Add new user<br/><br/></a>
-						<a href="view_users.php">- View all users<br/><br/></a>
+						<a href="view_lec_sub.php">- Enter exam Results</a><br/><br/>
+						
 						<a href="change_pw.php">- Change password</a><br/><br/>
-						<a href="logout.php">- Logout<br/><br/></a>
+						<a href="logout.php">- Logout</a>
+						
 						<br/>
 					</td>
 					<td id="page">
-						<h3>Admin user</h3>
+						<h3>Lecturer</h3>
 					</td>
 					<td id="logindetails">
 						<img src="images/user.jpg" style="width:150px;height:150px;">

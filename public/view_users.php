@@ -8,15 +8,38 @@ include_layout_template('header.php');
 			<table id="structure">
 				<tr>
 					<td id="navigation">
-						<a href="new_user.php">- Add new user<br/><br/></a>
-						<a href="view_users.php">- View all users<br/><br/></a>
-						<a href="change_pw.php">- Change password</a><br/><br/>
-						<a href="logout.php">- Logout<br/><br/></a>
 						<br/>
+                        <a href="home.php">- Home<br/><br/></a>
+						<a href="logout.php">- logout<br/><br/></a>
 					</td>
+					
+					
+						
+
+							
 					<td id="page">
-						<h3>Admin user</h3>
+						<table>
+								<?php
+								echo "<h4>Name: </h4>"."<br/>";
+								$arr=User::find_all();
+                                
+									foreach ($arr as $us){
+										echo "<tr><td>";
+										echo $us->name."</td>"."<td>";
+										echo $us->staff_id."</td>"."<td>";
+										echo $us->privilege."</td>"."<td>";
+										echo $us->email."</td><td>";
+										$idn=$us->staff_id;
+										echo "<a href='delete_user.php?id=$idn'>Delete</a></td></tr>";
+										}
+		
+								?>
+						</table>
+			
 					</td>
+		
+                       
+                        
 					<td id="logindetails">
 						<img src="images/user.jpg" style="width:150px;height:150px;">
 						<h4>Login Details</h4>
@@ -36,4 +59,4 @@ include_layout_template('header.php');
 					</td>
 				</tr>
 			</table>
-<?php require("layouts/footer.php");?>
+<?php //require("includes/footer.php");?>

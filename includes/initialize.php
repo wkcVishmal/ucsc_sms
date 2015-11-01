@@ -25,5 +25,10 @@ require_once(LIB_PATH.DS.'database_object.php');
 
 // load database-related classes
 require_once(LIB_PATH.DS.'user.php');
+require_once(LIB_PATH.DS.'student.php');
+require_once(LIB_PATH.DS.'subject.php');
+//require_once(LIB_PATH.DS.'Semster.php');
+//load form functions
+require_once(LIB_PATH.DS.'form_functions.php');
 
 ?>
