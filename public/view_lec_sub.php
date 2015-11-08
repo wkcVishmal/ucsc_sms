@@ -1,22 +1,41 @@
+
+                                        
 <?php
 require_once("../includes/initialize.php");
 if(!$session->is_logged_in()){redirect_to("login.php");}
-if($_SESSION['privilege']!="admin"){redirect_to("login.php");}
+//if($_SESSION['privilege']!="lecturer"){redirect_to("login.php");}
 include_layout_template('header.php');
+
 ?>
 
 			<table id="structure">
 				<tr>
 					<td id="navigation">
-						<a href="new_user.php">- Add new user<br/><br/></a>
-						<a href="view_users.php">- View all users<br/><br/></a>
-						<a href="change_pw.php">- Change password</a><br/><br/>
-						<a href="logout.php">- Logout<br/><br/></a>
 						<br/>
+                        <a href="home.php">- Home<br/><br/></a>
+						<a href="logout.php">- logout<br/><br/></a>
 					</td>
 					<td id="page">
-						<h3>Admin user</h3>
+						<table>
+								<?php
+								echo "<h4>Allocated Subjects: </h4>"."<br/>";
+                                $staff_id=$_SESSION['staff_id'];
+								$arr=Subject::find_sub_by_lec($staff_id);
+                                
+									foreach ($arr as $sub){
+										echo "<tr><td><strong>";
+										echo $sub->sub_id."</strong>&nbsp</td>"."<td>";
+										
+										echo "<a href='input_batch.php?sub_id=$sub->sub_id'>Enter Results</a></td></tr>";
+									  
+									}
+								?>
+						</table>
+			
 					</td>
+					
+                       
+                        
 					<td id="logindetails">
 						<img src="images/user.jpg" style="width:150px;height:150px;">
 						<h4>Login Details</h4>
@@ -36,4 +55,4 @@ include_layout_template('header.php');
 					</td>
 				</tr>
 			</table>
-<?php require("layouts/footer.php");?>
+<?php //require("includes/footer.php");?>

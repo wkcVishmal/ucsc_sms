@@ -37,4 +37,17 @@ function include_layout_template($template="") {
 	include(SITE_ROOT.DS.'public'.DS.'layouts'.DS.$template);
 }
 
+//function to get values from database without effectinig php code
+	function mysql_prep($value){
+		$magic_quotes_active=get_magic_quotes_gpc();
+		$new_enough_php=function_exists("mysql_real_escape_string");
+		if($new_enough_php){
+			if($magic_quotes_active){$value=stripcslashes($value);}
+			$value=mysql_real_escape_string($value);
+		}else{
+			if(!$magic_quotes_active){$value=addcslashes($value);}
+		}
+		return $value;
+	}
+
 ?>

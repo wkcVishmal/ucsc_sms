@@ -1,0 +1,14 @@
+Name in Full : <input type="text" name="name" size="70">
+								Name with initials : <input type="text" name="name" size="30">
+								Course name : <select name="name"> 
+									<option>IS</option>
+									<option>CS</option>
+								</select>
+								Registration no. :  <input type="text" name="Reg_no" size="30">
+								Index no. : <input type="text" name="Index_no" size="30">
+ 								Address : <input type="address" name="add" size="70"  >
+ 								Contact no. : <input type="postcode" name="Contact_no" size="30">
+ 								Email : <input type="email" name="email" size="30">
+ 								Gender : <br>
+ 								Female <input type = "radio" name="gender" value ="girl"> 
+ 								Male <input type = "radio" name="gender" value ="boy"> 

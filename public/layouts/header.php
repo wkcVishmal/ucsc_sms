@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div id="header">
-			<h1>UCSC Student Management System</h1>
+			<h1>Student Management System</h1>
         
 		<div id="main">
         

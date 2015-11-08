@@ -3,21 +3,21 @@ require_once("../includes/initialize.php");
 $message = "";
 
 if($session->is_logged_in()) {
-  redirect_to("admin.php");
+  redirect_to("home.php");
 }
 
-// Remember to give your form's submit tag a name="submit" attribute!
 if (isset($_POST['submit'])) { // Form has been submitted.
 
-  $username = trim($_POST['username']);
-  $password = trim($_POST['password']);
-  $h_password = sha1($password);
+  $username = trim($_POST['username']); //set the typed username to  $username
+  $password = trim($_POST['password']); //set the typed password to $password 
+  $h_password = sha1($password); // set hashed password to $h_password 
   // Check database to see if username/password exist.
-	$found_user = User::authenticate($username, $h_password);
+	$found_user = User::authenticate($username, $h_password); // if pwd & user ok user found ,$found_user = true
 	
   if ($found_user) {
-    $session->login($found_user);
-    redirect_to("admin.php");
+    $session->login($found_user); // if user ok go to session object
+	redirect_to("home.php");
+	
   } else {
     // username/password combo was not found in the database
     $message = "Username/password combination incorrect.";
@@ -30,18 +30,19 @@ if (isset($_POST['submit'])) { // Form has been submitted.
 
 ?>
 <?php include_layout_template('header.php'); ?>
-
-		<h2></h2>
-		
-
 		<form action="login.php" method="post">
 		  <table id="structure">
 				<tr>
-					<td id="navigation"></td>
-					<td id="page">
-						
-						
-						 
+					<td id="navigation">
+					  <a href="home.php">Home<br><br></a>					 
+					 <a href="view_cources.php">Cources<br><br></a>
+					 <a href="site_news.php">Site News<br><br></a>
+					 <a href="discussion.php">Discussion<br><br></a>
+					</td>					 
+	  				<td id="page">
+						<div id="whtbox">
+						<img src="images/login.png" style="width:600px;height:380px;margin:80px;border-radius: 10px 10px 10px 10px;">
+						</div>
 					</td>
 					<td id="logindetails">
 						 <div id="form">
@@ -59,19 +60,30 @@ if (isset($_POST['submit'])) { // Form has been submitted.
 									<td><input type="password" name="password" maxlength="30" value="<?php
 									echo htmlentities($password); ?>" /></td>
 								</tr>
-								<div>
-								  <tr>
-									<td>
-									<?php if(!empty($message)){echo "<p class=\"message\">".$message."</p>";} ?>
-									<?php if(!empty($errors)){display_errors($errors);} ?>
-									</td>
-								  </tr>
-								</div> 
-								<tr>
-									<td colspan="2"><input type="submit" name="submit" value="     Login   " />
-									</td>
-								</tr>
 							</table>
+							
+							<table>
+							  <tr>
+								<td>
+								  <?php if(!empty($message)){echo "<p class=\"message\">".$message."</p>";} ?>
+								  <?php if(!empty($errors)){display_errors($errors);} ?>
+								</td>
+							  </tr>
+							</table>
+							
+							<table>
+								<tr>								  
+									<td>
+									  <input type="checkbox">remember me
+									</td>
+									<td>
+									  <input type="submit" name="submit" value="     Login   " />
+									
+									</td>								  
+								</tr>
+								
+							</table>
+							
 						 </form>
 						 </div>
 					</td>

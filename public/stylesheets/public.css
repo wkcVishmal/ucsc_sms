@@ -9,7 +9,7 @@ a{color: #8D0D19;}
 
 #header{ height: 80px; margin: 0px; padding: 0px;text-align: left;
     background: #1A446C;background-image: url("ucsc.png");background-repeat:no-repeat;background-position:top right; color: #D4E6F4;}
-#header h1{padding: 1em; margin: 0px;}
+#header h1{padding:0.9em; margin: 0px; font-family: Agency FB; font-size: 30px; font-style: none;}
 #main{margin: 0px; padding: 0px;height: 600px;width: 100%;/*background: #EEE4B9;*/}
 #structure{ height: 600px;width: 100%;}
 #path{ height: 20px;width: 100%;color:  #D4E6F4}
@@ -19,7 +19,7 @@ a{color: #8D0D19;}
 
 /*Navigation*/
 
-#navigation{width: 150px;padding: 2em;color: #D4E6F4; background:	#DCDCDC; border-radius: 10px 10px 10px 10px;}
+#navigation{width: 150px;padding: 2em;color: #D4E6F4; background:	#DCDCDC; border-radius: 10px 10px 10px 10px; margin-right: 200px;}
 #navigation a {color:  #1A446C;text-decoration: none;}
 #logindetails{width: 150px;padding:2em;color: #00008B; background: 	#DCDCDC; border-radius: 10px 10px 10px 10px; margin-left:75%; }
 #logindetails a {color:  #1A446C;text-decoration: none;}
@@ -31,10 +31,62 @@ ul.pages{padding-left: 2em; list-style: square;}
 #page{padding-left: 2em;vertical-align: top;/*background: #EEE4B9;*/}
 #page h2{color: #8D0D19;margin-top: 1em;}
 #page h3{color: #8D0D19;}
+#page{width: 750px;padding:2em;color: #00008B; background: 	#DCDCDC; border-radius: 10px 10px 10px 10px; margin:100px; }
+#page h6{color: #FF0000;}
 
 input {
     display: block;
-    margin-bottom: 20px;}
+    margin-bottom: 20px;
+	}
 select{margin-bottom:20px;display:block;height:20px;width:172px;}
-#form2{width: 4em;}
-#t1{ margin-left:0% ;}
+#form2{width: 80%;}
+#name{width:250px; padding-right: 0px;margin-right:50px;}
+#text{width: 260px; padding-left: 0px;}
+
+
+#r1{
+	display:inline;
+}
+#add{
+	height: 70px;
+}
+.left-btn{
+	float: left;
+	padding-left: 190px;
+}
+.right-btn{
+	float: right;
+	padding-right: 100px;
+}
+#address{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+#whtbox{
+	border-radius: 10px 10px 10px 10px;
+	background:	#FFFFFF;
+	width: 780px ;
+	height: 550px;
+}
+#studentform{
+	border-radius: 10px 10px 10px 10px;
+	background:	#EAF5FF;
+	width: 780px ;
+	height: 720px;
+	margin: 5px;
+	padding: 15px;
+}
+#user_form{
+	border-radius: 10px 10px 10px 10px;
+	background:	#EAF5FF;
+	width: 780px ;
+	height: 700px;
+	margin: 5px;
+	padding: 15px;
+}
+#comnt{
+	width: 290px;
+	padding-left:0px;
+	margin-right:50px;
+	float:left;
+}
