@@ -4,6 +4,12 @@ if(!$session->is_logged_in()){redirect_to("login.php");}
 if($_SESSION['privilege']!="admin"){redirect_to("login.php");}
 include_layout_template('header.php');
 ?>
+<<<<<<< HEAD
+=======
+<?php $navi=array("Home"," my home","Add new user"); ?>
+
+
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 <?php
 
 	if(isset($_POST['submit'])){

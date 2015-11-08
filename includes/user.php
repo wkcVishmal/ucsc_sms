@@ -38,6 +38,7 @@ class User extends DatabaseObject { // extended because late static bindings (co
 		return !empty($result_array) ? array_shift($result_array) : false;
 	}
 	
+<<<<<<< HEAD
 	public static function change_pw($new_pw,$staff_id){
 		 global $database;
 
@@ -49,6 +50,8 @@ class User extends DatabaseObject { // extended because late static bindings (co
 	}
 	
 	
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	public static function view_users(){
 		global $database;
 		$sql = "SELECT * FROM users ";
@@ -135,6 +138,7 @@ class User extends DatabaseObject { // extended because late static bindings (co
 	    $clean_attributes[$key] = $database->escape_value($value);
 	  }
 	  return $clean_attributes;
+<<<<<<< HEAD
 	}
 	
 	
@@ -143,6 +147,16 @@ class User extends DatabaseObject { // extended because late static bindings (co
 	  return isset($this->id) ? $this->update() : $this->create();
 	}
 	
+=======
+	}
+	
+	
+	public function save() {
+	  // A new record won't have an id yet.
+	  return isset($this->id) ? $this->update() : $this->create();
+	}
+	
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	public function create() {
 		global $database;
 		// Don't forget your SQL syntax and good habits:

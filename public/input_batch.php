@@ -22,6 +22,7 @@ include_layout_template('header.php');
 			$errors['sem_id'] = "* Semster ID field cannot be empty.!";
 		}
 		
+<<<<<<< HEAD
         $batch_id=trim(mysql_prep($_POST['batch']));
         $sem_id=trim(mysql_prep($_POST['sem_id']));
         $course=trim(mysql_prep($_POST['course']));
@@ -43,6 +44,24 @@ include_layout_template('header.php');
 				//$message="There was 1 error in the form.";
 			}else{
 				//$message="There were ". count($errors)." errors in the form.<br/>";
+=======
+		
+        $batch_id=trim(mysql_prep($_POST['batch']));
+        $sem_id=trim(mysql_prep($_POST['sem_id']));
+        $course=trim(mysql_prep($_POST['course']));
+
+
+		if(empty($errors)){
+			$table=$batch_id.$course.$sem_id;
+			redirect_to("view_st_list.php?table=$table&staff_id=$staff_id&sub_id=$sub_id&sem_id=$sem_id&batch=$batch_id&course=$course");
+						
+		
+		}else{
+			if(count($errors)==1){
+				$message="There was 1 error in the form.";
+			}else{
+				$message="There were ". count($errors)." errors in the form.<br/>";
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 			}
 		}
 			
@@ -65,18 +84,33 @@ include_layout_template('header.php');
 								
                         <form id="input_batch" action="input_batch.php?sub_id=<?php echo $sub_id;?>" method="post" >
 							<table id="form2" width="100%">
+<<<<<<< HEAD
 
 								<tr>
 									<td id="batch">Enter Batch:</td>
 									<td id="batch"><input type="text" name="batch" id="batch"/></td>
+=======
+                                
+                                <?php echo $message; ?>
+								<tr>
+									<td id="batch">Enter Batch :</td>
+									<td id="batch"><input type="text" name="batch" id="batch" maxlength="50" size="50" value="<?php
+									//echo htmlentities($full_name); ?>"/></td>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 									<td><h6><?php if(isset($errors['batch'])) echo $errors['batch']; ?></h6></td>
 								</tr>
 								
                                  
 								 <tr>
 										<td>Semster ID:</td>
+<<<<<<< HEAD
 										<td id="sem_id" ><input type="text" name="sem_id" id="sem_id"/></td>
 									<td><h6><?php if(isset($errors['sem_id'])) echo $errors['sem_id']; ?></h6></td>
+=======
+										<td id="sem_id" ><input type="text" name="sem_id" id="sem_id" maxlength="50" value="<?php
+									//echo htmlentities($name); ?>"/></td>
+									<td><h6><?php //if(isset($errors['s_name'])) echo $errors['s_name']; ?></h6></td>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 								</tr>
 								<tr>
                                  <tr>

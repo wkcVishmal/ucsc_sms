@@ -4,6 +4,7 @@ if(!$session->is_logged_in()){redirect_to("login.php");}
 //if($_SESSION['privilege']!="admin"){redirect_to("login.php");}
 include_layout_template('header.php');
 ?>
+<<<<<<< HEAD
 <?php
 	if(isset($_POST['submit'])){
 		$errors = array();
@@ -48,6 +49,9 @@ include_layout_template('header.php');
 	}
 	
 ?>
+=======
+
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 
 			<table id="structure">
 				<tr>
@@ -56,12 +60,20 @@ include_layout_template('header.php');
 						<br/>
 					</td>
 					<td id="page">
+<<<<<<< HEAD
 						<h2>Change password</h2>
 						 <form id="change_pw" action="change_pw.php" method="post" >
+=======
+						<h2>Create new user</h2>
+						<?php //if(!empty($message)){echo "<p class=\"message\">".$message."</p>";} ?>
+						 <?php// if(!empty($errors)){display_errors($errors);} ?>
+						 <form id="user_form" action="new_user.php" method="post" >
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 							<table id="form2" width="100%">
 								
 								<tr>
 									<td>Current Password:</td>
+<<<<<<< HEAD
 									<td><input id="pw" type="password" name="pw"/></td>									
 								</tr>
                                 <tr>
@@ -73,6 +85,20 @@ include_layout_template('header.php');
 									<td>Confirm new Password:</td>
 									<td><input id="renew" type="password" name="renew"/></td>
 									<td><h6><?php if(isset($errors['renew'])) echo $errors['renew']; ?></h6></td>
+=======
+									<td><input id="password" type="password" name="password" maxlength="30"/></td>									
+								</tr>
+                                <tr>
+									<td>New Password:</td>
+									<td><input id="password" type="password" name="password" maxlength="30"/></td>									
+								</tr>
+                                <tr>
+									<td>Confirm new Password:</td>
+									<td><input id="password" type="password" name="password" maxlength="30"/></td>									
+								</tr>
+								<tr>
+									<td></td>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 								</tr>
 								<tr>
 									<td colspan="3"><input type="submit" name="submit" value="Change password" />

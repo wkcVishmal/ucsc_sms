@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
         if(empty($_POST['name'])){
+=======
+if(empty($_POST['name'])){
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 			$errors['name'] = "* Full Name field cannot be empty.";
 		}
 		if(!preg_match("/^[a-z ]+$/i", $_POST['name'])){

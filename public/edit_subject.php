@@ -14,6 +14,7 @@ include_layout_template('header.php');
 		if(empty($_POST['s_name'])){
 			$errors['s_name'] = "* Subject name field cannot be empty.";
 		}
+<<<<<<< HEAD
 		
         if(empty($_POST['credits'])){
 			$errors['credits'] = "* Enter number of credits for the subject";
@@ -24,6 +25,13 @@ include_layout_template('header.php');
 		$sem_id=trim(mysql_prep($_POST['sem_id']));
         $course=trim(mysql_prep($_POST['course']));
 		$credits=trim(mysql_prep($_POST['credits']));
+=======
+        
+        $sub_name=trim(mysql_prep($_POST['s_name']));
+        $year=trim(mysql_prep($_POST['year']));
+        $course=trim(mysql_prep($_POST['course']));
+
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 
 		if(empty($errors)){
         $updated_sub=new Subject();
@@ -31,10 +39,16 @@ include_layout_template('header.php');
 		$updated_sub->sub_id=$s_id;
         $updated_sub->sub_name=$sub_name;
         $updated_sub->year=$year;
+<<<<<<< HEAD
 		$updated_sub->sem_id=$sem_id;
         $updated_sub->course=$course;
         $updated_sub->credits=$credits;
 		        
+=======
+        $updated_sub->course=$course;
+
+        
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
         $update_sub_res=$updated_sub->update();
         
 			if($update_sub_res){
@@ -71,7 +85,12 @@ include_layout_template('header.php');
 					</td>
 					<td id="page">
 						<h2>Edit Subject details</h2>
+<<<<<<< HEAD
 
+=======
+						<?php //if(!empty($message)){echo "<p class=\"message\">".$message."</p>";} ?>
+						 <?php// if(!empty($errors)){display_errors($errors);} ?>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 						 <form id="user_form" action="edit_subject.php?id=<?php echo $s_id;?>" method="post" >
 							<table id="form2" width="100%">
                                 
@@ -94,11 +113,14 @@ include_layout_template('header.php');
 										</select>
 									</tr>
 								<tr>
+<<<<<<< HEAD
 										<td>Semster ID:</td>
 										<td id="sem_id" ><input type="text" name="sem_id" id="sem_id" maxlength="50" value="<?php
 									echo $find_sub->sem_id; ?>"/></td>
 									<td><h6><?php if(isset($errors['sem_id'])) echo $errors['sem_id']; ?></h6></td>
 								</tr>
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
                                  <tr>
 										<td>Course Name:</td>
 										<td><select name="course">
@@ -119,11 +141,16 @@ include_layout_template('header.php');
 		
 								</tr>
 								
+<<<<<<< HEAD
 								 <tr>
 										<td>Number of Credits:</td>
 										<td id="credits" ><input type="text" name="credits" id="credits" maxlength="50" value="<?php
 									echo $find_sub->credits; ?>"/></td>
 									<td><h6><?php if(isset($errors['credits'])) echo $errors['credits']; ?></h6></td>
+=======
+								<tr>
+									<td></td>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 								</tr>
 								<tr>
 									<td colspan="2"><input type="submit" name="submit" value="Update subject" />
