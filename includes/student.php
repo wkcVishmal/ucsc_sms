@@ -98,6 +98,7 @@ class Student{
 		$arr=self::find_by_sql($sql);
 		return $arr;
 	}
+<<<<<<< HEAD
 	
 	public static function find_by_id($id=0) {
     $result_array = self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE index_no={$id} LIMIT 1");
@@ -107,6 +108,12 @@ class Student{
     $result_array = self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE index_no={$id} LIMIT 1");
 		return !empty($result_array) ? array_shift($result_array) : false;
   }
+=======
+  public static function find_by_id($id=0) {
+    $result_array = self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE index_no={$id} LIMIT 1");
+		return !empty($result_array) ? $result_array : false;
+  }
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
   
   public static function find_by_sql($sql="") {
     global $database;

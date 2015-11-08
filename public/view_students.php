@@ -7,7 +7,10 @@ include_layout_template('header.php');
 <?php
 
 if(!empty($_POST['submit2'])){
+<<<<<<< HEAD
 	$arr=array();
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	$sele_batch="";
 	$sele="";
 	$batch="";
@@ -25,7 +28,10 @@ if(!empty($_POST['submit2'])){
 	}
 	}
 }elseif(!empty($_POST['submit1'])){
+<<<<<<< HEAD
 	$arr=array();
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	$sele_batch="";
 	$sele="";
 	
@@ -86,6 +92,14 @@ if(!empty($_POST['submit2'])){
 							</td>
 							<td><input id="submit1" name="submit1" type="submit" value="Search"></td>
 							</tr>
+<<<<<<< HEAD
+=======
+					<!--		</table>
+						</form>
+						<form name="submit2" action="view_students.php" method="post">
+							<table>
+					-->
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 							<tr>
 							<td><input id="index_no" name="index_no" type="search" placeholder="Index No."></td>
 							<td><input id="submit2" name="submit2" type="submit" value="Search"></td>
@@ -99,14 +113,23 @@ if(!empty($_POST['submit2'])){
 								echo "<h4>Students: </h4>"."<br/>";
 									foreach ($arr as $st){
 										echo "<tr><td>";
+<<<<<<< HEAD
 										echo $st->index_no."</td><td>";
+=======
+										echo $st->id."&nbsp</td>"."<td>";
+										 echo $st->index_no."</td><td>";
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 										echo $st->reg_no."</td><td>";
                                         echo $st->nwi."</td><td>";
                                         echo $st->course."</td><td>";
                                         echo $st->dob."</td><td>";
                                         echo $st->email."</td><td>";
 								
+<<<<<<< HEAD
 										$idn=$st->index_no;
+=======
+										$idn=$st->id;
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 										echo "<a href='edit_student.php?id=$idn'>Edit</a></td><td>"."&nbsp&nbsp";
 										echo "<a href='delete_student.php?id=$idn'>Delete</a></td></tr>";
 									}
@@ -116,6 +139,11 @@ if(!empty($_POST['submit2'])){
 						</table>
 			
 					</td>
+<<<<<<< HEAD
+=======
+					
+                       
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
                         
 					<td id="logindetails">
 						<img src="images/user.jpg" style="width:150px;height:150px;">
@@ -123,6 +151,10 @@ if(!empty($_POST['submit2'])){
 						<?php
 								echo "You have logged in as: ";
 								echo $session->privilege." user"."<br/><br/>";
+<<<<<<< HEAD
+=======
+								//print_r(User::find_by_id($session->user_id));
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 								$arr=User::find_by_id($session->user_id);
 								echo "Name: ";
 								echo $arr->name."<br/><br/>";
@@ -130,6 +162,10 @@ if(!empty($_POST['submit2'])){
 								echo $arr->staff_id."<br/><br/>";
 								echo "email:";
 								echo $arr->email."<br/>";
+<<<<<<< HEAD
+=======
+								
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
                         ?>
 					</td>
 				</tr>

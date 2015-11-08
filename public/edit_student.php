@@ -1,5 +1,10 @@
 <?php
     $id=$_GET['id'];
+<<<<<<< HEAD
+=======
+   echo $id;
+
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	
 require_once("../includes/initialize.php");
 if(!$session->is_logged_in()){redirect_to("login.php");}
@@ -8,7 +13,12 @@ include_layout_template('header.php');
 ?>
 <?php
 
+<<<<<<< HEAD
 	$find=Student::find_by_index($id);
+=======
+	$find=Student::find_by_id($id);
+	
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	include("../includes/validation.php");
 	
 	if(isset($_POST['submit'])){
@@ -67,8 +77,15 @@ include_layout_template('header.php');
 						<div id="studentform">
 							<h4><u><b>Student Registration Details</b></u></h4>
 							<?php
+<<<<<<< HEAD
 								echo $message;
 							?>
+=======
+									
+									echo $message;
+									
+									?>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 							<form id="stud_reg" action="edit_student.php?id=<?php echo $id; ?>" method="post" name="login">
 								<table id="form2" width="80%">
 									<tr>
@@ -213,7 +230,11 @@ include_layout_template('header.php');
 				</tr>
 			</table>
 			<table>
+<<<<<<< HEAD
 				<tr> <?php// require("layouts/footer.php");?> </tr>
+=======
+				<tr> <?php require("layouts/footer.php");?> </tr>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 			</table>
 			
 			

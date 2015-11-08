@@ -9,7 +9,10 @@ class Session {
 	
 	private $logged_in=false;
 	public $user_id;
+<<<<<<< HEAD
 	public $user_name;
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	public $privilege;
 	public $message;
 	
@@ -32,7 +35,10 @@ class Session {
     // database should find user based on username/password
     if($user){
       $this->user_id = $_SESSION['user_id'] = $user->id;
+<<<<<<< HEAD
 	  $this->user_name = $_SESSION['user_name'] = $user->username;
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	  $this->privilege = $_SESSION['privilege'] = $user->privilege;
 	  $this->staff_id = $_SESSION['staff_id'] = $user->staff_id;
       $this->logged_in = true;

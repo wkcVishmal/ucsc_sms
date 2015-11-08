@@ -16,17 +16,23 @@ include_layout_template('header.php');
 			$errors['s_name'] = "* Subject name field cannot be empty.";
 		}
 		
+<<<<<<< HEAD
 		if(empty($_POST['credits'])){
 			$errors['credits'] = "* Enter number of credits for the subject";
 		}
 		
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 		
         $sub_id=trim(mysql_prep($_POST['s_id']));
         $sub_name=trim(mysql_prep($_POST['s_name']));
         $year=trim(mysql_prep($_POST['year']));
 		$sem_id=trim(mysql_prep($_POST['sem_id']));
         $course=trim(mysql_prep($_POST['course']));
+<<<<<<< HEAD
 		$credits=trim(mysql_prep($_POST['credits']));
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 
 		if(empty($errors)){
         $new_sub=new Subject();
@@ -36,7 +42,10 @@ include_layout_template('header.php');
         $new_sub->year=$year;
         $new_sub->sem_id=$sem_id;
         $new_sub->course=$course;
+<<<<<<< HEAD
 		$new_sub->credits=$credits;
+=======
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
         
         $rslt=$new_sub->create();
         
@@ -105,13 +114,18 @@ include_layout_template('header.php');
 									//echo htmlentities($name); ?>"/></td>
 									<td><h6><?php //if(isset($errors['s_name'])) echo $errors['s_name']; ?></h6></td>
 								</tr>
+<<<<<<< HEAD
 								 
+=======
+								<tr>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
                                  <tr>
 										<td>Course Name:</td>
 										<td><select name="course"> 
 											<option name="course" value="<?php echo htmlentities($course="IS"); ?>">Information Systems</option>
 											<option name="course" selected="selected" value="<?php echo htmlentities($course="CS"); ?>">Computer Science</option>
 										</select>
+<<<<<<< HEAD
 								</tr>
 								  <tr>
 										<td>Number of Credits:</td>
@@ -119,6 +133,13 @@ include_layout_template('header.php');
 									<td><h6><?php //if(isset($errors['credits'])) echo $errors['credits']; ?></h6></td>
 								</tr>
 
+=======
+									</tr>
+								
+								<tr>
+									<td></td>
+								</tr>
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 								<tr>
 									<td colspan="2"><input type="submit" name="submit" value="Add subject" />
 									</td>

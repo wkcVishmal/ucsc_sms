@@ -18,9 +18,15 @@ class Semster{
 		$sql1="CREATE TABLE $this->id ( index_no int( 8 ) ,sub_id varchar( 50 ) ,grade CHAR( 2 ) , PRIMARY KEY ( index_no, sub_id ))";
         $result1=$database->query($sql1);
 		$this->table= $this->batch.$this->course.$this->sem_id;
+<<<<<<< HEAD
 		//$sql2="INSERT INTO $this->table (index_no) SELECT index_no FROM students WHERE course='$this->course' AND batch='$this->batch' ";
 		//$result2=$database->query($sql2);
 		if($result1){
+=======
+		$sql2="INSERT INTO $this->table (index_no) SELECT index_no FROM students WHERE course='$this->course' AND batch='$this->batch' ";
+		$result2=$database->query($sql2);
+		if($result2 && $result1){
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 			return true;
 		}else{
 			return false;

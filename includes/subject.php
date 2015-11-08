@@ -3,7 +3,11 @@ require_once(LIB_PATH.DS.'database.php');
 
 class Subject{
     protected static $table_name="subjects";
+<<<<<<< HEAD
 	protected static $db_fields = array('sub_id','sub_name', 'year', 'sem_id','staff_id','credits');
+=======
+	protected static $db_fields = array('sub_id','sub_name', 'year', 'sem_id','staff_id');
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
     
     public $sub_id;
 	public $sub_name; 
@@ -11,21 +15,33 @@ class Subject{
 	public $sem_id;
     public $course;
 	public $staff_id;
+<<<<<<< HEAD
 	public $credits;
+=======
+	
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
     
     
     public function create() {
 		global $database;
 
 	    $sql = "INSERT INTO ".self::$table_name." (";
+<<<<<<< HEAD
 		$sql .= "sub_id, sub_name, year, sem_id, course, credits";
+=======
+		$sql .= "sub_id, sub_name, year, sem_id, course";
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	    $sql .= ") VALUES ('";
 		$sql .= $database->escape_value($this->sub_id)."', '";
 		$sql .= $database->escape_value($this->sub_name)."', '";
 		$sql .= $database->escape_value($this->year)."', '";
 		$sql .= $database->escape_value($this->sem_id)."', '";
+<<<<<<< HEAD
 		$sql .= $database->escape_value($this->course)."', '";
 		$sql .= $database->escape_value($this->credits)."')";
+=======
+		$sql .= $database->escape_value($this->course)."')";
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 	$result1=$database->query($sql);
 	
 	
@@ -143,8 +159,12 @@ class Subject{
 		$sql .="sub_name='{$this->sub_name}', ";
 		$sql .="year='{$this->year}', ";
 		$sql .="sem_id='{$this->sem_id}', ";
+<<<<<<< HEAD
 		$sql .="course='{$this->course}', ";
 		$sql .="credits='{$this->credits}' ";
+=======
+		$sql .="course='{$this->course}' ";
+>>>>>>> 6aceb631899f9d7c7ec0936be4adab3034a70f60
 		$sql .= " WHERE sub_id='{$this->sub_id}'";
 		
 	  $database->query($sql);
